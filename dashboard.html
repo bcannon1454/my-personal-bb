@@ -1,1 +1,23 @@
+<style>table, th, td {
+    border: 1px solid black;
+	margin-left: 20px;
+}
+h3{margin-left: 20px;}
+</style>
+
 <h3> You are now at the dashboard </h3>
+
+<table>
+	<tr><th>Semester</th><th>Course</th></tr>
+	<tr ng-repeat="entry in entries">
+		<td> {{entry.semester}}</td><td>{{entry.course}}</td>
+	</tr>
+</table>
+
+<hr>
+
+<form>
+	Semester: <input ng-model="add.semester">
+	Course: <input ng-model="add.course">
+	<button ng-click="submit(add.semester, add.course)">Submit</button>
+</form>
