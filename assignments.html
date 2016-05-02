@@ -1,0 +1,24 @@
+<style>table, th, td {
+    border: 1px solid black;
+	margin-left: 20px;
+}
+h3{margin-left: 20px;}
+</style>
+
+<h3> Assignments </h3>
+
+<table>
+	<tr><th>Name</th><th>Course</th><th>Due Date</th></tr>
+	<tr ng-repeat="entry in entries">
+		<td> {{entry.name}}</td><td>{{entry.course}}</td><td>{{entry.duedate}}</td>
+	</tr>
+</table>
+
+<hr>
+
+<form>
+	Name: <input ng-model="add.name">
+	Course: <input ng-model="add.course">
+	Due Date: <input ng-model="add.duedate">
+	<button ng-click="submit(add.name, add.course, add.duedate)">Submit</button>
+</form>
